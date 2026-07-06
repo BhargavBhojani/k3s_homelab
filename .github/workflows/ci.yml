@@ -1,9 +1,11 @@
+---
 name: Homelab CI
 
 on:
   push:
-    branches: ["main"]
-  pull_request:
+    branches:
+      - "main"
+  pull_request: {}
 
 jobs:
   lint-yaml:
@@ -37,4 +39,5 @@ jobs:
             ! -path "./.github/*" \
             | xargs kubeconform \
             -strict \
-            -ignore-missing-schemas
+            -schema-location default \
+            -schema-location "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/{{.Group}}/{{.ResourceKind}}_{{.ResourceAPIVersion}}.json"
