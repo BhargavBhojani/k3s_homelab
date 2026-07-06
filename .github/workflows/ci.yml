@@ -37,4 +37,8 @@ jobs:
         run: |
           find . -type f \( -name "*.yaml" -o -name "*.yml" \) \
             ! -path "./.github/*" \
-            | xargs kubeconform -strict -schema-location default
+            | xargs kubeconform \
+              -strict \
+              -schema-location default \
+              -schema-location "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/{{.Group}}/" \
+              -schema-location "{{.ResourceKind}}_{{.ResourceAPIVersion}}.json"
