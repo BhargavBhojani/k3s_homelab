@@ -1,0 +1,10 @@
+apiVersion: v2
+name: homelab-monitoring
+description: K3s Homelab Monitoring
+type: application
+version: 1.0.0
+
+dependencies:
+  - name: kube-prometheus-stack
+    version: "79.5.0"
+    repository: "https://prometheus-community.github.io/helm-charts"
