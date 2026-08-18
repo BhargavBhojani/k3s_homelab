@@ -1,0 +1,9 @@
+operatorConfig:
+  hostname: tailscale-operator
+
+  defaultTags:
+    - tag:k8s
+
+  nodeSelector:
+    node-role.kubernetes.io/worker: worker
+
