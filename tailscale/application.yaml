@@ -14,9 +14,8 @@ spec:
     helm:
       values: |
         oauth:
-          clientId: ""
-
-          clientSecret: ""
+          clientId: "kEoMNGHqQH11CNTRL"
+          clientSecret: "tskey-client-kEoMNGHqQH11CNTRL-3x3mVWpJb5TvMU6hXhjq5TcU5U3RQrJ8K"
 
   destination:
     server: https://kubernetes.default.svc
